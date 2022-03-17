@@ -1,0 +1,88 @@
+import * as React from 'react';
+import { Button, View, Image, StyleSheet, ImageBackground } from 'react-native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: 50,
+  },
+  stretch: {
+    width: 50,
+    height: 200,
+    resizeMode: 'stretch',
+  },
+});
+
+
+function Cachorro1({ navigation }) {
+  return (
+    <View
+    style={{
+      flex: 1,
+      backgroundColor: '#1B1A17',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}>
+      <ImageBackground 
+    source={require('./images/dog2.png')}
+    style={{width: 400, height: 400}} 
+/>
+</View>
+  );
+}
+
+function Cachorro2({ navigation }) {
+  return (
+    <View
+    style={{
+      flex: 1,
+      backgroundColor: '#F0A500',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}>
+<ImageBackground 
+    source={require('./images/dog.png')}
+    style={{width: 400, height: 400}} 
+/>
+
+
+</View>
+  );
+}
+
+
+
+
+function Cachorro3({ navigation }) {
+  return (
+    <View
+    style={{
+      flex: 1,
+      backgroundColor: '#F0A500',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}>
+<ImageBackground 
+    source={require('./images/dog3.gif')}
+    style={{width: 400, height: 400}} 
+/>
+
+
+</View>
+  );
+}
+
+const Drawer = createDrawerNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Drawer.Navigator initialRouteName="Cachorro 1">
+        <Drawer.Screen name="Cachorro 1" component={Cachorro1} />
+        <Drawer.Screen name="Cachorro 2" component={Cachorro2} />
+        <Drawer.Screen name="Cachorro 3" component={Cachorro3} />
+      </Drawer.Navigator>
+    </NavigationContainer>
+  );
+}
